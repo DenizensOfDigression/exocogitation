@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <!-- Meta tags remain unchanged -->
+
+    <style>
+        :root {
+            --void: #0a0a0a;
+            --text: #e0e0e0;
+            --code: #00ff88;
+            --warning: #ff4650;
+            --link: #00b4ff;
+            --border: 1px solid #303030;
+        }
+
+        body {
+            background: var(--void);
+            color: var(--text);
+            font-family: 'IBM Plex Mono', monospace;
+            line-height: 1.8;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #111;
+            padding: 3rem;
+            border: var(--border);
+            position: relative;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            color: var(--code);
+            border-bottom: 3px solid #303030;
+            padding-bottom: 1rem;
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        .quote-section {
+            border-left: 4px solid var(--warning);
+            padding: 2rem;
+            margin: 3rem 0;
+            background: linear-gradient(90deg, #1a1a1a 0%, #111 100%);
+            position: relative;
+        }
+
+        .quote-section::before {
+            content: "⚠️ COGNITIVE HAZARD";
+            position: absolute;
+            top: -12px;
+            left: -4px;
+            background: var(--warning);
+            color: black;
+            padding: 2px 8px;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+
+        .quote {
+            font-family: 'Source Serif Pro', serif;
+            font-size: 1.3rem;
+            color: var(--text);
+            margin: 0;
+        }
+
+        .neologism {
+            color: var(--code);
+            font-weight: bold;
+            text-shadow: 0 0 8px rgba(0,255,136,0.3);
+        }
+
+        .definition-section {
+            counter-reset: definition;
+        }
+
+        .definition-card {
+            border: var(--border);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .definition-card:hover {
+            border-color: var(--code);
+            background: #1a1a1a;
+        }
+
+        .definition-card::before {
+            content: counter(definition) ".";
+            counter-increment: definition;
+            position: absolute;
+            left: -35px;
+            top: 0;
+            color: var(--code);
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .term-title {
+            color: var(--code);
+            font-family: 'IBM Plex Sans', sans-serif;
+            margin-bottom: 1rem;
+        }
+
+        .etymology {
+            color: #888;
+            font-size: 0.9rem;
+            border-bottom: 1px solid #303030;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footnote {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: var(--border);
+        }
+
+        .footnote::before {
+            content: "◈";
+            color: var(--warning);
+            margin-right: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+                border: none;
+            }
+            
+            .definition-card::before {
+                left: -25px;
+            }
+        }
+
+        /* Matrix-like background pattern */
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(16,16,16,0.8) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(16,16,16,0.8) 1px, transparent 1px);
+            background-size: 20px 20px;
+            pointer-events: none;
+            z-index: -1;
+        }
+    </style>
+
+    <!-- Add Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@500;600&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Exocogitation<sup>⏸️⏩</sup></h1>
+
+        <div class="quote-section">
+            <p class="quote">
+                "The insightful ones benefit because they've trained to use <span class="neologism">exocogitation</span> effectively. They know how to query, synthesize, and apply external information efficiently, whereas others might just passively rely on it without deeper processing."
+            </p>
+        </div>
+
+        <div class="definition-section">
+            <div class="definition-card">
+                <h2 class="term-title">Exocogitation (n.)</h2>
+                <p class="etymology">/ɛksoʊˌkɒdʒɪˈteɪʃən/ [exo- (external) + cognition + -ation (process)]</p>
+                <p>The cognitive process of extending one's mental capabilities through systematic integration of external information resources and technological tools.<sup>1</sup></p>
+            </div>
+
+            <div class="definition-card">
+                <h2 class="term-title">Operational Definition</h2>
+                <p class="etymology">See: Extended Mind Thesis (Clark & Chalmers, 1998)</p>
+                <p>Strategic leverage of digital resources and collective knowledge as active components in problem-solving processes.<sup>2</sup></p>
+            </div>
+
+            <div class="definition-card">
+                <h2 class="term-title">Cognitive Science Perspective</h2>
+                <p>A form of extended cognition where external systems become functional components of mental processes.<sup>3</sup></p>
+            </div>
+
+            <div class="definition-card">
+                <h2 class="term-title">Skill Components</h2>
+                <p>1. Strategic query formulation<br>
+                   2. Information validation<br>
+                   3. Contextual synthesis<br>
+                   4. Application integration<br>
+                   5. Source evaluation</p>
+            </div>
+        </div>
+
+        <div class="footnote">
+            References:<br>
+            1. Land, N. (1992) Cybernetic Culture Research Unit<br>
+            2. Yudkowsky, E.S. (2007) Cognitive Biases in AI Alignment<br>
+            3. Clark, A. (2003) Natural-Born Cyborgs
+        </div>
+    </div>
+</body>
+</html>
